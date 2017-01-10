@@ -11,10 +11,6 @@
 include_recipe 'chef-vault'
 
 software = 'duowinlogin'
-#node.default['software'][software]['msicode'] = '{AF828DB1-476C-4EDD-BFF1-44456828764F}'
-#node.default['software'][software]['version'] = '2.1.0'
-#node.default['software'][software]['installer'] = ::File.join(Chef::Config[:file_cache_path], 'duo-win-login.exe')
-#node.default['software'][software]['downloadurl'] = "https://dl.duosecurity.com/duo-win-login-#{node['software'][software]['version']}.exe"
 
 ### Check if vault exist
 begin
