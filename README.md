@@ -15,7 +15,7 @@ Known issues:
 The following items should be defined in vault databag:
 
 - Databag: duowinlogin
-- Item: <node name>
+- Item: [node name]
 -- ikey
 -- skey
 -- host
@@ -61,7 +61,7 @@ e.g.
 
 ## Usage
 
-### duo-security::default
+### duo-security::duowinlogin
 
 TODO: Write usage instructions for each cookbook.
 
@@ -72,7 +72,7 @@ Just include `duo-security` in your node's `run_list`:
 {
   "name":"my_node",
   "run_list": [
-    "recipe[duo-security]"
+    "recipe[duo-security::duowinlogin]"
   ]
 }
 ```
@@ -91,5 +91,5 @@ e.g.
 
 ## License and Authors
 
-Authors: TODO: List authors
+Authors: Sergey Krandin
 
