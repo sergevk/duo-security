@@ -1,18 +1,28 @@
-# duo-security Cookbook
+# duo-security Cookbook v.0.1.1
 
-TODO: Enter the cookbook description here.
+Cookbook for install DUO security windows login agent. Can be used for upgrade from older version.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Tested only with version 2.1.0 (Latest to 01.2017)
+
+Known issues:
+- Don't work with version 1.2.0.14 (command line parameters is different)
+- If wrong version defined - recipe fails.
+- Uninstall not supported
+
 
 ## Requirements
 
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+The following items should be defined in vault databag:
 
-e.g.
+- Databag: duowinlogin
+- Item: <node name>
+-- ikey
+-- skey
+-- host
+
 ### Platforms
 
-- SandwichOS
+- Windows
 
 ### Chef
 
@@ -20,7 +30,7 @@ e.g.
 
 ### Cookbooks
 
-- `toaster` - duo-security needs toaster to brown your bagel.
+- `chef-vault` - duo-security needs it for get secrets froom vault.
 
 ## Attributes
 
@@ -37,10 +47,15 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['duo-security']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>default['software']['duowinlogin']['version']</tt></td>
+    <td>String</td>
+    <td>Version of DUO login agents</td>
+    <td><tt>2.1.0</tt></td>
+  </tr>
+    <td><tt>default['software']['duowinlogin']['msicode']</tt></td>
+    <td>String</td>
+    <td>MSI code for detect installation</td>
+    <td><tt>{AF828DB1-476C-4EDD-BFF1-44456828764F}</tt></td>
   </tr>
 </table>
 
